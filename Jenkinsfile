@@ -37,7 +37,7 @@ pipeline{
         stage("deploy"){
             steps{
                 script{
-                deploy("$NODE_BIN",3000,react)
+                deploy("$NODE_BIN",3000,"react")
             }
             }
             
