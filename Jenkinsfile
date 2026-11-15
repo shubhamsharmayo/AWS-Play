@@ -8,27 +8,39 @@ pipeline{
 
     stages{
         stage("Greetings"){
-            script{
+            steps{
+                script{
                 waddup()
             }
+            }
+            
         }
 
         stage("clone"){
-            script{
+            steps{
+                script{
                 clone("https://github.com/shubhamsharmayo/AWS-Play","main")
             }
+            }
+            
         }
 
         stage("build"){
-            script{
+            steps{
+                script{
                 build("$NODE_BIN")
             }
+            }
+            
         }
 
         stage("deploy"){
-            script{
+            steps{
+                script{
                 deploy("$NODE_BIN",3000,react)
             }
+            }
+            
         }
     }
 }
